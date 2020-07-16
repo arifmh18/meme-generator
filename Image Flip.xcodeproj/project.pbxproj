@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		016D0D42C75A3502F246C6A6 /* Pods_Image_Flip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C817BBADA248309D3C9A332 /* Pods_Image_Flip.framework */; };
+		FAAB1D7424AD899F009641AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1D7324AD899F009641AC /* AppDelegate.swift */; };
+		FAAB1D7624AD899F009641AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1D7524AD899F009641AC /* SceneDelegate.swift */; };
+		FAAB1D7824AD899F009641AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1D7724AD899F009641AC /* ViewController.swift */; };
+		FAAB1D7B24AD899F009641AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAB1D7924AD899F009641AC /* Main.storyboard */; };
+		FAAB1D7E24AD899F009641AC /* Image_Flip.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1D7C24AD899F009641AC /* Image_Flip.xcdatamodeld */; };
+		FAAB1D8024AD89A4009641AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAB1D7F24AD89A4009641AC /* Assets.xcassets */; };
+		FAAB1D8324AD89A4009641AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAAB1D8124AD89A4009641AC /* LaunchScreen.storyboard */; };
+		FAAB1D8F24AD8B6B009641AC /* DataNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1D8E24AD8B6B009641AC /* DataNetwork.swift */; };
+		FAAB1D9124AD8D13009641AC /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1D9024AD8D13009641AC /* Base.swift */; };
+		FAAB1D9324AD8EAC009641AC /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1D9224AD8EAC009641AC /* DataModel.swift */; };
+		FAAB1D9D24AD91FA009641AC /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1D9B24AD91FA009641AC /* ImageCell.swift */; };
+		FAAB1D9E24AD91FA009641AC /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAB1D9C24AD91FA009641AC /* ImageCell.xib */; };
+		FAAB1DA124AD973A009641AC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1DA024AD973A009641AC /* Utils.swift */; };
+		FAAB1DA324ADA1C3009641AC /* DetailControllerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1DA224ADA1C3009641AC /* DetailControllerController.swift */; };
+		FAAB1DA524ADA362009641AC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB1DA424ADA362009641AC /* ImagePicker.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C817BBADA248309D3C9A332 /* Pods_Image_Flip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Image_Flip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C49F12D8F2B6C3149B07CA4 /* Pods-Image Flip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Image Flip.release.xcconfig"; path = "Target Support Files/Pods-Image Flip/Pods-Image Flip.release.xcconfig"; sourceTree = "<group>"; };
+		DD4B59D96AE201916C73EC9F /* Pods-Image Flip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Image Flip.debug.xcconfig"; path = "Target Support Files/Pods-Image Flip/Pods-Image Flip.debug.xcconfig"; sourceTree = "<group>"; };
+		FAAB1D7024AD899F009641AC /* Image Flip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Flip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAAB1D7324AD899F009641AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAAB1D7524AD899F009641AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FAAB1D7724AD899F009641AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAAB1D7A24AD899F009641AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FAAB1D7D24AD899F009641AC /* Image_Flip.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Image_Flip.xcdatamodel; sourceTree = "<group>"; };
+		FAAB1D7F24AD89A4009641AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAAB1D8224AD89A4009641AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FAAB1D8424AD89A4009641AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAAB1D8E24AD8B6B009641AC /* DataNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataNetwork.swift; sourceTree = "<group>"; };
+		FAAB1D9024AD8D13009641AC /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		FAAB1D9224AD8EAC009641AC /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		FAAB1D9B24AD91FA009641AC /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		FAAB1D9C24AD91FA009641AC /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		FAAB1DA024AD973A009641AC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FAAB1DA224ADA1C3009641AC /* DetailControllerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailControllerController.swift; sourceTree = "<group>"; };
+		FAAB1DA424ADA362009641AC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAAB1D6D24AD899F009641AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				016D0D42C75A3502F246C6A6 /* Pods_Image_Flip.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3883A0DADBA68C7F6371A214 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD4B59D96AE201916C73EC9F /* Pods-Image Flip.debug.xcconfig */,
+				7C49F12D8F2B6C3149B07CA4 /* Pods-Image Flip.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7622B2C80EE086EBAF556ED7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C817BBADA248309D3C9A332 /* Pods_Image_Flip.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAAB1D6724AD899F009641AC = {
+			isa = PBXGroup;
+			children = (
+				FAAB1D7224AD899F009641AC /* Image Flip */,
+				FAAB1D7124AD899F009641AC /* Products */,
+				3883A0DADBA68C7F6371A214 /* Pods */,
+				7622B2C80EE086EBAF556ED7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FAAB1D7124AD899F009641AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAAB1D7024AD899F009641AC /* Image Flip.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAAB1D7224AD899F009641AC /* Image Flip */ = {
+			isa = PBXGroup;
+			children = (
+				FAAB1D9F24AD9711009641AC /* Utils */,
+				FAAB1D8D24AD8B52009641AC /* Network */,
+				FAAB1D8C24AD8B17009641AC /* Controller */,
+				FAAB1D8B24AD8B10009641AC /* Model */,
+				FAAB1D8A24AD8B04009641AC /* View */,
+				FAAB1D7324AD899F009641AC /* AppDelegate.swift */,
+				FAAB1D7524AD899F009641AC /* SceneDelegate.swift */,
+				FAAB1D7F24AD89A4009641AC /* Assets.xcassets */,
+				FAAB1D8424AD89A4009641AC /* Info.plist */,
+				FAAB1D7C24AD899F009641AC /* Image_Flip.xcdatamodeld */,
+			);
+			path = "Image Flip";
+			sourceTree = "<group>";
+		};
+		FAAB1D8A24AD8B04009641AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAAB1D7924AD899F009641AC /* Main.storyboard */,
+				FAAB1D8124AD89A4009641AC /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAAB1D8B24AD8B10009641AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAAB1D9224AD8EAC009641AC /* DataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FAAB1D8C24AD8B17009641AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAAB1D9424AD9088009641AC /* Cell */,
+				FAAB1D7724AD899F009641AC /* ViewController.swift */,
+				FAAB1DA224ADA1C3009641AC /* DetailControllerController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FAAB1D8D24AD8B52009641AC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FAAB1D8E24AD8B6B009641AC /* DataNetwork.swift */,
+				FAAB1D9024AD8D13009641AC /* Base.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FAAB1D9424AD9088009641AC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FAAB1D9B24AD91FA009641AC /* ImageCell.swift */,
+				FAAB1D9C24AD91FA009641AC /* ImageCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FAAB1D9F24AD9711009641AC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FAAB1DA024AD973A009641AC /* Utils.swift */,
+				FAAB1DA424ADA362009641AC /* ImagePicker.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAAB1D6F24AD899F009641AC /* Image Flip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAAB1D8724AD89A4009641AC /* Build configuration list for PBXNativeTarget "Image Flip" */;
+			buildPhases = (
+				F44948253BAF03C4A7989980 /* [CP] Check Pods Manifest.lock */,
+				FAAB1D6C24AD899F009641AC /* Sources */,
+				FAAB1D6D24AD899F009641AC /* Frameworks */,
+				FAAB1D6E24AD899F009641AC /* Resources */,
+				E854E20E7C30DAE6B818F3ED /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Image Flip";
+			productName = "Image Flip";
+			productReference = FAAB1D7024AD899F009641AC /* Image Flip.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAAB1D6824AD899F009641AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Ardat Code";
+				TargetAttributes = {
+					FAAB1D6F24AD899F009641AC = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = FAAB1D6B24AD899F009641AC /* Build configuration list for PBXProject "Image Flip" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAAB1D6724AD899F009641AC;
+			productRefGroup = FAAB1D7124AD899F009641AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAAB1D6F24AD899F009641AC /* Image Flip */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAAB1D6E24AD899F009641AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAAB1D8324AD89A4009641AC /* LaunchScreen.storyboard in Resources */,
+				FAAB1D9E24AD91FA009641AC /* ImageCell.xib in Resources */,
+				FAAB1D8024AD89A4009641AC /* Assets.xcassets in Resources */,
+				FAAB1D7B24AD899F009641AC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E854E20E7C30DAE6B818F3ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Image Flip/Pods-Image Flip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Image Flip/Pods-Image Flip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Image Flip/Pods-Image Flip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F44948253BAF03C4A7989980 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Image Flip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAAB1D6C24AD899F009641AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAAB1DA324ADA1C3009641AC /* DetailControllerController.swift in Sources */,
+				FAAB1D9324AD8EAC009641AC /* DataModel.swift in Sources */,
+				FAAB1D9124AD8D13009641AC /* Base.swift in Sources */,
+				FAAB1DA124AD973A009641AC /* Utils.swift in Sources */,
+				FAAB1D7E24AD899F009641AC /* Image_Flip.xcdatamodeld in Sources */,
+				FAAB1D7824AD899F009641AC /* ViewController.swift in Sources */,
+				FAAB1D7424AD899F009641AC /* AppDelegate.swift in Sources */,
+				FAAB1DA524ADA362009641AC /* ImagePicker.swift in Sources */,
+				FAAB1D9D24AD91FA009641AC /* ImageCell.swift in Sources */,
+				FAAB1D7624AD899F009641AC /* SceneDelegate.swift in Sources */,
+				FAAB1D8F24AD8B6B009641AC /* DataNetwork.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FAAB1D7924AD899F009641AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAAB1D7A24AD899F009641AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FAAB1D8124AD89A4009641AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAAB1D8224AD89A4009641AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAAB1D8524AD89A4009641AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAAB1D8624AD89A4009641AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAAB1D8824AD89A4009641AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD4B59D96AE201916C73EC9F /* Pods-Image Flip.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5MW69P4B57;
+				INFOPLIST_FILE = "Image Flip/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ardat.code.Image-Flip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAAB1D8924AD89A4009641AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C49F12D8F2B6C3149B07CA4 /* Pods-Image Flip.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5MW69P4B57;
+				INFOPLIST_FILE = "Image Flip/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ardat.code.Image-Flip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAAB1D6B24AD899F009641AC /* Build configuration list for PBXProject "Image Flip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAAB1D8524AD89A4009641AC /* Debug */,
+				FAAB1D8624AD89A4009641AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAAB1D8724AD89A4009641AC /* Build configuration list for PBXNativeTarget "Image Flip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAAB1D8824AD89A4009641AC /* Debug */,
+				FAAB1D8924AD89A4009641AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FAAB1D7C24AD899F009641AC /* Image_Flip.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAAB1D7D24AD899F009641AC /* Image_Flip.xcdatamodel */,
+			);
+			currentVersion = FAAB1D7D24AD899F009641AC /* Image_Flip.xcdatamodel */;
+			path = Image_Flip.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FAAB1D6824AD899F009641AC /* Project object */;
+}
