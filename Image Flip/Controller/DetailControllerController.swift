@@ -8,15 +8,18 @@
 
 import UIKit
 
-class DetailControllerController: UIViewController {
+class DetailControllerController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var detail_title: UILabel!
     @IBOutlet weak var detail_image: UIImageView!
-    @IBOutlet weak var detail_textInputan: UITextField!
-    @IBOutlet weak var detail_addLogo: UIButton!
-    @IBOutlet weak var detail_addText: UIButton!
-    @IBOutlet weak var detail_simpan: UIButton!
+    @IBOutlet weak var detail_imageAdd: UIImageView!
+    @IBOutlet weak var detail_imageLabel: UILabel!
     
+    @IBOutlet weak var detail_textField: UITextField!
+    @IBOutlet weak var detail_addImage: UIView!
+    @IBOutlet weak var detail_addLabel: UIView!
+    @IBOutlet weak var detail_save: UIView!
+    
+    @IBOutlet weak var detail_canvas: UIView!
     var data : DataModel.DataMemes? = nil
     var dataImage : UIImage? = nil
     
@@ -29,50 +32,110 @@ class DetailControllerController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationItem.title = "Detail Gambar"
-        
-        self.detail_title.text = self.data?.name ?? ""
+        self.detail_imageAdd.isHidden = true
+        self.detail_imageLabel.isHidden = true
+        self.detail_textField.isHidden = true
+        self.detail_textField.delegate = self
         
         let thumb = URL(string: self.data?.url ?? "")
         self.detail_image.kf.setImage(with: thumb)
-        self.detail_textInputan.isHidden = true
-        self.detail_simpan.isHidden = true
         
-        self.detail_addLogo.addTarget(self, action: #selector(addLogo), for: .touchUpInside)
-        self.detail_addText.addTarget(self, action: #selector(addText), for: .touchUpInside)
-        self.detail_simpan.addTarget(self, action: #selector(simpan), for: .touchUpInside)
+        let imageAddGes = UITapGestureRecognizer(target: self, action: #selector(addLogo))
+        let labelAddGes = UITapGestureRecognizer(target: self, action: #selector(showLabel))
+        let labelAddEdit = UITapGestureRecognizer(target: self, action: #selector(labelEdit))
+        let saveImageGesture = UITapGestureRecognizer(target: self, action: #selector(createImage))
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(scaleImage(recognizer:)))
+        let pinGesture = UIPinchGestureRecognizer(target: self, action: #selector(onClickPinch(recognizer:)))
+        
+        let pan2Gesture = UIPanGestureRecognizer(target: self, action: #selector(scaleImage2(recognizer:)))
+        let pin2Gesture = UIPinchGestureRecognizer(target: self, action: #selector(onClickPinch2(recognizer:)))
+        
+        self.detail_imageAdd.addGestureRecognizer(panGesture)
+        self.detail_imageAdd.addGestureRecognizer(pinGesture)
+        self.detail_imageLabel.addGestureRecognizer(pan2Gesture)
+        self.detail_imageLabel.addGestureRecognizer(pin2Gesture)
+        self.detail_imageLabel.addGestureRecognizer(labelAddEdit)
+        self.detail_addImage.addGestureRecognizer(imageAddGes)
+        self.detail_addLabel.addGestureRecognizer(labelAddGes)
+        self.detail_save.addGestureRecognizer(saveImageGesture)
+    }
+    
+    @objc func labelEdit(){
+        self.detail_imageLabel.isHidden = true
+        self.detail_textField.isHidden = false
+        self.detail_textField.text = self.detail_imageLabel.text ?? ""
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.detail_textField.isHidden = true
+        self.detail_imageLabel.isHidden = false
+        self.detail_imageLabel.text = self.detail_textField.text ?? ""
+        return true
+    }
+    
+    @objc func createImage(){
+        let image = UIView.asImage(self.detail_canvas)
+        
+        UIImageWriteToSavedPhotosAlbum(image(), self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc func scaleImage(recognizer: UIPanGestureRecognizer){
+        let translation = recognizer.translation(in: self.view)
+        if let view = recognizer.view {
+            view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
+        }
+        
+        recognizer.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
+    @objc func onClickPinch(recognizer: UIPinchGestureRecognizer){
+        if let view = recognizer.view {
+            view.transform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
+            recognizer.scale = 1
+        }
+    }
+
+    @objc func scaleImage2(recognizer: UIPanGestureRecognizer){
+        let translation = recognizer.translation(in: self.view)
+        if let view = recognizer.view {
+            view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
+        }
+        
+        recognizer.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
+    @objc func onClickPinch2(recognizer: UIPinchGestureRecognizer){
+        if let view = recognizer.view {
+            view.transform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
+            recognizer.scale = 1
+        }
+    }
+
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Tersimpan!", message: "Gambar Anda Sudah Tersimpan", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
     
     @objc func addLogo(){
         ImagePicker().pickImage(self) { (image) in
             self.dataImage = image
-            self.detail_image.image = image
+            self.detail_imageAdd.image = image
+            self.detail_imageAdd.isHidden = false
         }
     }
     
-    @objc func addText(){
-        self.detail_textInputan.isHidden = false
-        self.detail_simpan.isHidden = false
-    }
-    
-    @objc func simpan(){
-        let judul = self.detail_textInputan.text ?? ""
-        
-        if judul.isEmpty {
-            Utils().showAlert(controller: self, message: "Judul Harap Diisi Dulu ya", seconds: 1)
-            return
-        }
-        if self.dataImage == nil {
-            Utils().showAlert(controller: self, message: "Gambar Dipilih Dulu yah", seconds: 1)
-            return
-        }
-        
-        let simpan = self.saveImage(image: self.dataImage!, title: judul)
-        
-        if simpan {
-            Utils().showAlert(controller: self, message: "Selamat Gambar Anda Sudah Tersimpan di HP Anda", seconds: 1)
-        } else {
-            Utils().showAlert(controller: self, message: "Maaf Gagal Menyimpan Gambar", seconds: 1)
-        }
+    @objc func showLabel(){
+        self.detail_imageLabel.isHidden = false
     }
     
     func saveImage(image: UIImage, title: String) -> Bool {
